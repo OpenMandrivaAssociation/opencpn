@@ -1,5 +1,5 @@
 Name: opencpn
-Summary: OpenCPN: A concise ChartPlotter/Navigator.
+Summary: OpenCPN: A concise ChartPlotter/Navigator
 Version: 1.3.6
 Release: %mkrel 1
 License: GPLv2+
