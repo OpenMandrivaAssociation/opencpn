@@ -1,7 +1,7 @@
 Name: opencpn
 Summary: OpenCPN: A concise ChartPlotter/Navigator
 Version: 1.3.6
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPLv2+
 Group: Sciences/Geosciences
 Source0: http://prdownloads.sourceforge.net/project/opencpn/%{name}/%{version}/%{name}-%{version}.tar.bz2
