@@ -2,8 +2,8 @@
 
 Name:		opencpn
 Summary:	OpenCPN: A concise ChartPlotter/Navigator
-Version:	2.5.0
-Release:	%mkrel 1
+Version:	3.0.2
+Release:	1
 License:	GPLv2+
 Group:		Sciences/Geosciences
 URL:		http://opencpn.org
@@ -41,16 +41,11 @@ cmake	. \
 %make
 
 %install
-%__rm -rf %{buildroot}
 %makeinstall_std
 
 %find_lang %{name} --all-name
 
-%clean
-%__rm -rf %{buildroot}
-
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc README
 %{_bindir}/*
 %{_datadir}/%{name}
