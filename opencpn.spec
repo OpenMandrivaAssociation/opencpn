@@ -53,3 +53,23 @@ cmake	. \
 %{_libdir}/%{name}/*.so
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.*
+
+
+%changelog
+* Wed Jul 18 2012 Alexander Khrukin <akhrukin@mandriva.org> 3.0.2-1
++ Revision: 810119
+- version update 3.0.2
+
+* Sun Jan 15 2012 Andrey Bondrov <abondrov@mandriva.org> 2.5.0-1
++ Revision: 760900
+- New version 2.5.0, switch to utf8 version of wxGTK2.8
+
+* Tue Dec 07 2010 Oden Eriksson <oeriksson@mandriva.com> 1.3.6-2mdv2011.0
++ Revision: 613533
+- rebuild
+
+* Sun Feb 07 2010 Funda Wang <fwang@mandriva.org> 1.3.6-1mdv2010.1
++ Revision: 501636
+- fix summary
+- import opencpn
+
