@@ -1,7 +1,7 @@
 %define		oname	OpenCPN
 
 Name:		opencpn
-Summary:	OpenCPN: A concise ChartPlotter/Navigator
+Summary:	: A concise ChartPlotter/Navigator
 Version:	3.0.2
 Release:	1
 License:	GPLv2+
