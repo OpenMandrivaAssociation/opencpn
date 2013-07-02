@@ -12,7 +12,7 @@ BuildRequires:	cmake
 BuildRequires:	bzip2-devel
 BuildRequires:	gpsd-devel
 BuildRequires:	pkgconfig(gtk+-2.0)
-BuildRequires:	mesagl-devel
+BuildRequires:	mesa-common-devel
 BuildRequires:	mesaglu-devel
 BuildRequires:	wxgtku-devel
 BuildRequires:	zlib-devel
