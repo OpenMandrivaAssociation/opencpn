@@ -13,7 +13,6 @@ BuildRequires:	bzip2-devel
 BuildRequires:	gpsd-devel
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	mesa-common-devel
-BuildRequires:	mesaglu-devel
 BuildRequires:	wxgtku-devel
 BuildRequires:	zlib-devel
 # Building with TinyXML from repositories causes segfault at start
