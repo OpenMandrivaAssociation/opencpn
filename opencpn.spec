@@ -8,6 +8,7 @@ License:	GPLv2+
 Group:		Sciences/Geosciences
 URL:		http://opencpn.org
 Source0:	http://prdownloads.sourceforge.net/project/opencpn/%{name}/%{version}/%{oname}-%{version}-Source.tar.gz
+Source1:	opencpn.rpmlintrc
 BuildRequires:	cmake
 BuildRequires:	bzip2-devel
 BuildRequires:	gpsd-devel
