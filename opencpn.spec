@@ -12,11 +12,10 @@ Source1:	opencpn.rpmlintrc
 BuildRequires:	cmake
 BuildRequires:	bzip2-devel
 BuildRequires:	gpsd-devel
-BuildRequires:	gtk+2-devel
-BuildRequires:	mesagl-devel
-BuildRequires:	mesaglu-devel
-Buildrequires:	wxgtku-devel
-Buildrequires:	zlib-devel
+BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	mesa-common-devel
+BuildRequires:	wxgtku-devel
+BuildRequires:	zlib-devel
 # Building with TinyXML from repositories causes segfault at start
 BuildConflicts:	tinyxml-devel
 
