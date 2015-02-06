@@ -3,7 +3,7 @@
 Name:		opencpn
 Summary:	A concise ChartPlotter/Navigator
 Version:	3.0.2
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Sciences/Geosciences
 URL:		http://opencpn.org
