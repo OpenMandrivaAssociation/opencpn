@@ -16,9 +16,9 @@ Source1:	opencpn.rpmlintrc
 BuildRequires:	cmake
 BuildRequires:	bzip2-devel
 BuildRequires:	gpsd-devel
-BuildRequires:	pkgconfig(gtk+-2.0)
+#BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	mesa-common-devel
-BuildRequires:	wxgtku-devel
+#BuildRequires:	wxgtku-devel
 BuildRequires:	zlib-devel
 BuildRequires:	gettext
 BuildRequires:	pkgconfig(gl)
