@@ -21,7 +21,7 @@ BuildRequires:	mesa-common-devel
 #BuildRequires:	wxgtku-devel
 BuildRequires:	zlib-devel
 BuildRequires:	gettext
-BuildRequires"	pkgconfig(cairo)
+BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(glu)
 BuildRequires:	pkgconfig(libcurl)
