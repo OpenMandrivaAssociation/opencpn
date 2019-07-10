@@ -49,7 +49,7 @@ A cross-platform ship-borne GUI application supporting
 Pilot charts can be downloaded from http://opencpn.org/ocpn/downloadpilotcharts
 
 %prep
-%setup -q -n %{tarname}-%{version}
+%setup -q -n %{oname}-%{version}
 %autopatch -p1
 
 rm -rf plugins/chartdldr_pi
