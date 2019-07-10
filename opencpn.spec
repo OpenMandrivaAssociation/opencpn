@@ -1,4 +1,5 @@
 %define _disable_ld_no_undefined 1
+%define _disable_lto 1
 %global __requires_exclude ^lib(S57ENC|GARMINHOST|TEXCMP|NMEA0183)\\.so.*$
 
 %define		oname	OpenCPN
