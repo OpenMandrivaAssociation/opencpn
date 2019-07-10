@@ -63,6 +63,8 @@ rm -rf plugins/chartdldr_pi
 rm -f src/tinyxml*.cpp include/tinyxml.h
 
 %build
+export CC=gcc
+export CXX=g++
 %cmake	-DBUNDLE_DOCS=ON \
 	-DBUNDLE_TCDATA=ON \
 	-DBUNDLE_GSHHS=CRUDE \
