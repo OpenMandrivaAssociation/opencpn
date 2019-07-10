@@ -32,7 +32,7 @@ BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	wxgtku3.0-devel
 # Building with TinyXML from repositories causes segfault at start
-BuildRequires:	pkgconfig(tinyxml)
+BuildRequires:	tinyxml-devel
 
 Requires:	gpsd-clients
 
