@@ -10,7 +10,7 @@ Release:	1
 License:	GPLv2+
 Group:		Sciences/Geosciences
 URL:		http://opencpn.org
-Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{toname}-%{version}.tar.gz
+Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{oname}-%{version}.tar.gz
 Source1:	opencpn.rpmlintrc
 
 BuildRequires:	cmake
