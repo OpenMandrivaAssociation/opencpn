@@ -1,14 +1,18 @@
+%define _disable_ld_no_undefined 1
+%global __requires_exclude ^lib(S57ENC|GARMINHOST|TEXCMP|NMEA0183)\\.so.*$
+
 %define		oname	OpenCPN
 
 Name:		opencpn
 Summary:	A concise ChartPlotter/Navigator
-Version:	3.0.2
-Release:	3
+Version:	5.0.0
+Release:	1
 License:	GPLv2+
 Group:		Sciences/Geosciences
 URL:		http://opencpn.org
-Source0:	http://prdownloads.sourceforge.net/project/opencpn/%{name}/%{version}/%{oname}-%{version}-Source.tar.gz
+Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{toname}-%{version}.tar.gz
 Source1:	opencpn.rpmlintrc
+
 BuildRequires:	cmake
 BuildRequires:	bzip2-devel
 BuildRequires:	gpsd-devel
@@ -16,8 +20,22 @@ BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	mesa-common-devel
 BuildRequires:	wxgtku-devel
 BuildRequires:	zlib-devel
+BuildRequires:	gettext
+BuildRequires:	pkgconfig(gl)
+BuildRequires:	pkgconfig(glu)
+BuildRequires:	pkgconfig(libcurl)
+BuildRequires:	pkgconfig(libexif)
+BuildRequires:	pkgconfig(libgps)
+BuildRequires:	pkgconfig(portaudio-2.0)
+BuildRequires:	pkgconfig(sndfile)
+BuildRequires:	pkgconfig(sqlite3)
+BuildRequires:	pkgconfig(zlib)
+BuildRequires:	wxgtku3.0-devel
 # Building with TinyXML from repositories causes segfault at start
-BuildConflicts:	tinyxml-devel
+BuildRequires:	pkgconfig(tinyxml)
+
+Requires:	gpsd-clients
+
 
 %description
 A cross-platform ship-borne GUI application supporting
@@ -31,28 +49,51 @@ A cross-platform ship-borne GUI application supporting
 Pilot charts can be downloaded from http://opencpn.org/ocpn/downloadpilotcharts
 
 %prep
-%setup -q -n %{oname}-%{version}-Source
+%setup -q -n %{tarname}-%{version}
+%autopatch -p1
+
+rm -rf plugins/chartdldr_pi
+
+# Be sure to use system tinyxml headers and not bundled ones
+rm -f src/tinyxml*.cpp include/tinyxml.h
 
 %build
-cmake	. \
-	-DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
-	-DCMAKE_BUILD_TYPE=release \
-	-DCMAKE_SKIP_RPATH:BOOL=ON
-%make
+%cmake	-DBUNDLE_DOCS=ON \
+	-DBUNDLE_TCDATA=ON \
+	-DBUNDLE_GSHHS=CRUDE \
+	-DBUILD_SHARED_LIBS=OFF
+%make_build
 
 %install
-%makeinstall_std
+%make_install -C build
 
-%find_lang %{name} --all-name
+%find_lang %{name}
+%find_lang %{name}-grib_pi
+%find_lang %{name}-dashboard_pi
+%find_lang %{name}-wmm_pi
 
-%files -f %{name}.lang
+desktop-file-install  \
+ --dir=%{buildroot}%{_datadir}/applications \
+ --remove-category='Science' \
+  %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+cp -f data/license.txt %{buildroot}%{_datadir}/%{name}/doc
+cp -f data/doc/help_en_US.html %{buildroot}%{_datadir}/%{name}/doc
+
+# Remove Debian-only docs
+rm -rf %{buildroot}%{_datadir}/doc/%{name}
+
+%files -f %{name}.lang -f %{name}-dashboard_pi.lang -f %{name}-grib_pi.lang -f %{name}-wmm_pi.lang
 %doc README
 %{_bindir}/*
-%{_datadir}/%{name}
 %dir %{_libdir}/%{name}
-%{_libdir}/%{name}/*.so
+%{_libdir}/%{name}/*
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/*
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/appdata/%{name}.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
+%{_mandir}/man1/opencpn.1.xz
 
 
 %changelog
