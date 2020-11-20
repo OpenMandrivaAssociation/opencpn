@@ -6,7 +6,7 @@
 
 Name:		opencpn
 Summary:	A concise ChartPlotter/Navigator
-Version:	5.0.0
+Version:	5.2.4
 Release:	1
 License:	GPLv2+
 Group:		Sciences/Geosciences
