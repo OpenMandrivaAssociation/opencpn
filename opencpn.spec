@@ -27,6 +27,7 @@ BuildRequires:	gettext
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(glu)
+BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libexif)
 BuildRequires:	pkgconfig(libgps)
