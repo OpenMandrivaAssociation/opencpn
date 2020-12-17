@@ -13,7 +13,7 @@ Group:		Sciences/Geosciences
 URL:		http://opencpn.org
 Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{oname}-%{version}.tar.gz
 Source1:	opencpn.rpmlintrc
-Patch10:	opencpn-5.0.0-link_wxgtk.patch
+#Patch10:	opencpn-5.0.0-link_wxgtk.patch
 
 BuildRequires:	cmake
 BuildRequires:	bzip2-devel
