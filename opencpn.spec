@@ -13,7 +13,6 @@ Group:		Sciences/Geosciences
 URL:		http://opencpn.org
 Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{oname}-%{version}.tar.gz
 Source1:	opencpn.rpmlintrc
-#Patch10:	opencpn-5.0.0-link_wxgtk.patch
 
 BuildRequires:	cmake
 BuildRequires:	bzip2-devel
@@ -64,8 +63,8 @@ rm -rf plugins/chartdldr_pi
 rm -f src/tinyxml*.cpp include/tinyxml.h
 
 %build
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 %cmake	-DBUNDLE_DOCS=ON \
 	-DBUNDLE_TCDATA=ON \
 	-DBUNDLE_GSHHS=CRUDE \
@@ -99,9 +98,9 @@ rm -rf %{buildroot}%{_datadir}/doc/%{name}
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/appdata/%{name}.appdata.xml
+#{_datadir}/appdata/%{name}.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
-%{_mandir}/man1/opencpn.1.xz
+%{_mandir}/man1/opencpn.1.*
 
 
 %changelog
