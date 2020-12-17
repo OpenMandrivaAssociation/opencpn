@@ -63,8 +63,6 @@ rm -rf plugins/chartdldr_pi
 rm -f src/tinyxml*.cpp include/tinyxml.h
 
 %build
-#export CC=gcc
-#export CXX=g++
 %cmake	-DBUNDLE_DOCS=ON \
 	-DBUNDLE_TCDATA=ON \
 	-DBUNDLE_GSHHS=CRUDE \
@@ -98,7 +96,7 @@ rm -rf %{buildroot}%{_datadir}/doc/%{name}
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
 %{_datadir}/applications/%{name}.desktop
-#{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/metainfo/opencpn.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_mandir}/man1/opencpn.1.*
 
