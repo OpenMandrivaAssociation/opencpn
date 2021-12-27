@@ -6,12 +6,12 @@
 
 Name:		opencpn
 Summary:	A concise ChartPlotter/Navigator
-Version:	5.2.4
+Version:	5.6.0
 Release:	1
 License:	GPLv2+
 Group:		Sciences/Geosciences
 URL:		http://opencpn.org
-Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{oname}-%{version}.tar.gz
+Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{oname}-Release_%{version}.tar.gz
 Source1:	opencpn.rpmlintrc
 
 BuildRequires:	cmake
@@ -30,6 +30,7 @@ BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libexif)
 BuildRequires:	pkgconfig(libgps)
+BuildRequires:	pkgconfig(libusb-1.0)
 BuildRequires:	pkgconfig(pangocairo)
 BuildRequires:	pkgconfig(portaudio-2.0)
 BuildRequires:	pkgconfig(sndfile)
@@ -54,7 +55,7 @@ A cross-platform ship-borne GUI application supporting
 Pilot charts can be downloaded from http://opencpn.org/ocpn/downloadpilotcharts
 
 %prep
-%setup -q -n %{oname}-%{version}
+%setup -q -n %{oname}-Release_%{version}
 %autopatch -p1
 
 rm -rf plugins/chartdldr_pi
