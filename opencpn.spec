@@ -10,7 +10,7 @@ Version:	5.6.0
 Release:	1
 License:	GPLv2+
 Group:		Sciences/Geosciences
-URL:		http://opencpn.org
+URL:		https://opencpn.org
 Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{oname}-Release_%{version}.tar.gz
 Source1:	opencpn.rpmlintrc
 
