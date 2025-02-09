@@ -6,7 +6,7 @@
 
 Name:		opencpn
 Summary:	A concise ChartPlotter/Navigator
-Version:	5.6.0
+Version:	5.10.2
 Release:	1
 License:	GPLv2+
 Group:		Sciences/Geosciences
@@ -14,9 +14,11 @@ URL:		https://opencpn.org
 Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{oname}-Release_%{version}.tar.gz
 Source1:	opencpn.rpmlintrc
 
+BuildRequires:	git
 BuildRequires:	cmake
 BuildRequires:	bzip2-devel
 BuildRequires:	gpsd-devel
+BuildRequires:	pkgconfig(gtest)
 BuildRequires:	pkgconfig(gdk-3.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	mesa-common-devel
@@ -30,13 +32,16 @@ BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libexif)
 BuildRequires:	pkgconfig(libgps)
+BuildRequires:	pkgconfig(libelf)
 BuildRequires:	pkgconfig(libusb-1.0)
+BuildRequires:	pkgconfig(glew)
 BuildRequires:	pkgconfig(pangocairo)
 BuildRequires:	pkgconfig(portaudio-2.0)
+BuildRequires:	pkgconfig(RapidJSON)
 BuildRequires:	pkgconfig(sndfile)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(zlib)
-BuildRequires:	wxgtku3.0-devel
+BuildRequires:	wxgtku3.2-devel
 # Building with TinyXML from repositories causes segfault at start
 BuildRequires:	tinyxml-devel
 
@@ -67,6 +72,7 @@ rm -f src/tinyxml*.cpp include/tinyxml.h
 %cmake	-DBUNDLE_DOCS=ON \
 	-DBUNDLE_TCDATA=ON \
 	-DBUNDLE_GSHHS=CRUDE \
+ 	-DOCPN_BUILD_TEST=OFF \
 	-DBUILD_SHARED_LIBS=OFF
 %make_build
 
@@ -84,7 +90,7 @@ desktop-file-install  \
   %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 cp -f data/license.txt %{buildroot}%{_datadir}/%{name}/doc
-cp -f data/doc/help_en_US.html %{buildroot}%{_datadir}/%{name}/doc
+#cp -f data/doc/help_en_US.html %{buildroot}%{_datadir}/%{name}/doc
 
 # Remove Debian-only docs
 rm -rf %{buildroot}%{_datadir}/doc/%{name}
@@ -100,6 +106,7 @@ rm -rf %{buildroot}%{_datadir}/doc/%{name}
 %{_datadir}/metainfo/opencpn.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_mandir}/man1/opencpn.1.*
+%{_mandir}/man1/opencpn-cmd.1.*
 
 
 %changelog
