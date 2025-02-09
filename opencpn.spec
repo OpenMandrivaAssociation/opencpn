@@ -14,6 +14,7 @@ URL:		https://opencpn.org
 Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}/%{oname}-Release_%{version}.tar.gz
 Source1:	opencpn.rpmlintrc
 
+BuildRequires:	git
 BuildRequires:	cmake
 BuildRequires:	bzip2-devel
 BuildRequires:	gpsd-devel
