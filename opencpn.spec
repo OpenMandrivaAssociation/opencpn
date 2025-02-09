@@ -69,6 +69,7 @@ rm -f src/tinyxml*.cpp include/tinyxml.h
 %cmake	-DBUNDLE_DOCS=ON \
 	-DBUNDLE_TCDATA=ON \
 	-DBUNDLE_GSHHS=CRUDE \
+ 	-DOCPN_BUILD_TEST=OFF \
 	-DBUILD_SHARED_LIBS=OFF
 %make_build
 
