@@ -90,7 +90,7 @@ desktop-file-install  \
   %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 cp -f data/license.txt %{buildroot}%{_datadir}/%{name}/doc
-cp -f data/doc/help_en_US.html %{buildroot}%{_datadir}/%{name}/doc
+#cp -f data/doc/help_en_US.html %{buildroot}%{_datadir}/%{name}/doc
 
 # Remove Debian-only docs
 rm -rf %{buildroot}%{_datadir}/doc/%{name}
