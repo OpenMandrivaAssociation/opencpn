@@ -106,6 +106,7 @@ rm -rf %{buildroot}%{_datadir}/doc/%{name}
 %{_datadir}/metainfo/opencpn.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_mandir}/man1/opencpn.1.*
+%{_mandir}/man1/opencpn-cmd.1.*
 
 
 %changelog
