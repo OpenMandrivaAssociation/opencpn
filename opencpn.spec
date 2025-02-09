@@ -36,7 +36,7 @@ BuildRequires:	pkgconfig(portaudio-2.0)
 BuildRequires:	pkgconfig(sndfile)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(zlib)
-BuildRequires:	wxgtku3.0-devel
+BuildRequires:	wxgtku3.2-devel
 # Building with TinyXML from repositories causes segfault at start
 BuildRequires:	tinyxml-devel
 
